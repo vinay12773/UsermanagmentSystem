@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>User Management Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <section class="card">
+      <header>
+        <h1>User Management</h1>
+      </header>
+
+      <form id="userForm" novalidate>
+        <div>
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" placeholder="Enter your name" required />
+        </div>
+
+        <div>
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="0" max="100" placeholder="Enter your Age" required />
+          <div id="ageError" class="error" style="display:none; color:red; font-size:14px;"></div>
+        </div>
+
+
+        <div class="full">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email@gmail.com" required />
+          <div id="emailError" class="error" style="display:none; color:red; font-size:14px;"></div>
+          </div>
+
+
+        <div>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Set strong password" required aria-describedby="pwHelp" />
+          <div class="pw-meter"><span id="pwBar"></span></div>
+          <div id="pwHelp" class="muted"></div>
+        </div>
+
+        <div>
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-type password" required />
+          <div id="matchError" class="error" style="display:none"></div>
+        </div>
+
+        <div>
+          <label for="role">Role</label>
+          <select id="role" name="role" required>
+            <option value="">Select role...</option>
+            <option>Admin</option>
+            <option>Editor</option>
+            <option>Viewer</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Gender</label>
+          <div class="fieldset radio-row">
+            <label><input type="radio" name="gender" value="Male" checked /> Male</label>
+            <label><input type="radio" name="gender" value="Female" /> Female</label>
+            <label><input type="radio" name="gender" value="Other" /> Other</label>
+          </div>
+        </div>
+
+        <div class="full actions">
+          <button type="submit" class="btn-primary">Save user</button>
+          <button type="reset" class="btn-ghost">Reset</button>
+        </div>
+      </form>
+
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
